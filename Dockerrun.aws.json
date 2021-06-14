@@ -2,38 +2,39 @@
  "AWSEBDockerrunVersion": 2,
  "containerDefinitions": [
   {
-   "name":"client",
-   "image":"26071995/new-client",
-   "hostname":"client",
-   "essential":false,
-   "memory":128
-  }
+   "name": "client",
+   "image": "26071995/new-client",
+   "hostname": "client",
+   "essential": false,
+   "memory": 128
+  },
   {
-   "name":"api",
-   "image":"26071995/new-server",
-   "hostname":"api",
-   "essential":false,
-   "memory":128
-  }
+   "name": "api",
+   "image": "26071995/new-server",
+   "hostname": "api",
+   "essential": false,
+   "memory": 128
+  },
   {
-   "name":"worker",
-   "image":"26071995/new-worker",
-  # "hostname":"client",
-   "essential":false,
-   "memory":128
-  }
+   "name": "worker",
+   "image": "26071995/new-worker",
+   "hostname": "worker",
+   "essential": false,
+   "memory": 128
+  },
   {
-   "name":"nginx",
-   "image":"26071995/new-nginx",
-   "hostname":"nginx",
-   "portMappings":[ {
+   "name": "nginx",
+   "image": "26071995/new-nginx",
+   "hostname": "nginx",
+   "portMappings": [
+     {
       "hostPort":80,
       "containerPort":80
     }
     ],
    "links": ["client","api"],
-   "essential":true,
-   "memory":128
+   "essential": true,
+   "memory": 128
   }
 ]
 }
