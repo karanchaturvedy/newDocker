@@ -18,13 +18,13 @@ after_success:
  - docker push 26071995/new-ngnix
  - docker push 26071995/new-worker 
 deploy:
- provider:elasticbeanstalk
+ provider: elasticbeanstalk
  region: us-east-2
  app: MyDockerApp
  env: Mydockerapp-env-22
  bucket_name: elasticbeanstalk-us-east-2-863659641122
  bucket_path: mynewDocker
  on:
-  branch:master
+  branch: master
  access_key_id: $AWS_ACCESS_KEY
  secret_access_key: $AWS_SECRET_KEY 
