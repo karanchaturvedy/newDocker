@@ -11,7 +11,8 @@ after_success:
  - docker build -t 26071995/new-server ./server
  - docker build -t 26071995/new-ngnix ./nginx
  - docker build -t 26071995/new-worker ./worker
- - echo "$DOCKER_PASSWORD" | docker login --username foo --password-stdin
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+ - echo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 # docker push to hub
  - docker push 26071995/new-client
  - docker push 26071995/new-server
