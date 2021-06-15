@@ -7,16 +7,16 @@ script:
  - docker run -it new:latest npm test -- --coverage
 after_success:
 #docker build
- - docker build -t 26071995/new-client ./client
- - docker build -t 26071995/new-server ./server
- - docker build -t 26071995/new-ngnix ./nginx
- - docker build -t 26071995/new-worker ./worker
- - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+# - docker build -t 26071995/new-client ./client
+# - docker build -t 26071995/new-server ./server
+# - docker build -t 26071995/new-ngnix ./nginx
+# - docker build -t 26071995/new-worker ./worker
+# - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 # docker push to hub
- - docker push 26071995/new-client
- - docker push 26071995/new-server
- - docker push 26071995/new-ngnix
- - docker push 26071995/new-worker 
+# - docker push 26071995/new-client
+# - docker push 26071995/new-server
+# - docker push 26071995/new-ngnix
+# - docker push 26071995/new-worker 
 deploy:
  provider: elasticbeanstalk
  region: us-east-2
