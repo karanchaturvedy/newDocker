@@ -21,9 +21,9 @@ deploy:
  provider: elasticbeanstalk
  region: us-east-2
  app: MyDockerApp
- env: Mydockerapp-env-22
+ env: Mydockerappnew-env
  bucket_name: elasticbeanstalk-us-east-2-863659641122
- bucket_path: mynewDocker
+ bucket_path: mynewDockerapp2
  on:
   branch: master
  access_key_id: $AWS_ACCESS_KEY
